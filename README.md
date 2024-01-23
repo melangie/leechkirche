@@ -14,12 +14,12 @@ Dieses Projekt widmet sich der digitalen Darstellung und Erforschung der histori
 - **3D-Modelle**: Interaktive Darstellung der Kirche in 3DHOP.
 - **Bildungsressourcen**: Materialien für weitere Studien.
 - **Heilkräuter**: Spezieller Fokus auf die botanischen Darstellungen in der Kirche.
+- - **Timeline JS**: Übersicht der Entstehenung der Kirche
 
 ## Technologie
 - **3DHOP**: Für interaktive 3D-Modelle
 - **HTML/CSS/JS**: Für Webentwicklung
 - **Responsive Design**: Gewährleistet Zugänglichkeit auf allen Geräten
-- **Timeline JS**: Übersicht der Entstehenung der Kirche
 
 ## Lizenz
 Dieses Projekt ist unter der MIT-Lizenz lizenziert.
