@@ -19,6 +19,7 @@ Dieses Projekt widmet sich der digitalen Darstellung und Erforschung der histori
 - **3DHOP**: Für interaktive 3D-Modelle
 - **HTML/CSS/JS**: Für Webentwicklung
 - **Responsive Design**: Gewährleistet Zugänglichkeit auf allen Geräten
+- **Timeline JS**: Übersicht der Entstehenung der Kirche
 
 ## Lizenz
 Dieses Projekt ist unter der MIT-Lizenz lizenziert.
