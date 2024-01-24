@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Grazer Leechkirche</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link type="text/css" rel="stylesheet" href="stylesheet/main.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script type="text/javascript" src="js/spidergl.js"></script>
+    <script type="text/javascript" src="js/presenter.js"></script>
+    <script type="text/javascript" src="js/nexus.js"></script>
+    <script type="text/javascript" src="js/ply.js"></script>
+    <script type="text/javascript" src="js/trackball_turntable.js"></script>
+    <script type="text/javascript" src="js/trackball_turntable_pan.js"></script>
+    <script type="text/javascript" src="js/trackball_pantilt.js"></script>
+    <script type="text/javascript" src="js/trackball_sphere.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+</head>
+<body>
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/leechkirche.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ededda;">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="projekt.html">Projekt</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Leechkirche
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="geschichte.html">Geschichte</a></li>
+                  <li><a class="dropdown-item" href="architektur.html">Architektur</a></li>
+                  <li><a class="dropdown-item" href="heilkraeuter.html">Heilkräuter</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Unterhaltung
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="musik.html">KI-Musik</a></li>
+                  <li><a class="dropdown-item" href="memory.html">Heilkräuter-Memory</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  3D-Modelle
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="Leechkirche_altar.html">Altar</a></li>
+                    <li><a class="dropdown-item" href="Leechkirche_Mosaik.html">Mosaik</a></li>
+                    <li><a class="dropdown-item" href="monument.html">Monument</a></li>
+                    <li><a class="dropdown-item" href="ritter_leech.html">Ritter</a></li>
+                    <li><a class="dropdown-item" href="Wasserbecken_1.html">Wasserbecken 1</a></li>
+                    <li><a class="dropdown-item" href="Wasserbecken_2.html">Wasserbecken 2</a></li>
+                  <div class="dropdown-divider"></div>
+                  <li><a class="dropdown-item" href="viewer_aussenbereich.html">Außenbereich</a></li>
+                  <li><a class="dropdown-item" href="viewer_innenbereich.html">Innenbereich</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="kontakt.html">Kontakt</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
+      <div id="toolbar">
+       <img id="home"     title="Home"                  src="skins/dark/home.png"            /><br/>
+       <img id="zoomin"   title="Zoom In"               src="skins/dark/zoomin.png"          /><br/>
+       <img id="zoomout"  title="Zoom Out"              src="skins/dark/zoomout.png"         /><br/>
+       <img id="light_on" title="Disable Light Control" src="skins/dark/lightcontrol_on.png" style="position:absolute; visibility:hidden;"/>
+       <img id="light"    title="Enable Light Control"  src="skins/dark/lightcontrol.png"    /><br/>
+       <img id="screenshot"   title="Save Screenshot"       src="skins/dark/screenshot.png"      /><br/>
+       <img id="full_on"  title="Exit Full Screen"      src="skins/dark/full_on.png"         style="position:absolute; visibility:hidden;"/>
+       <img id="full"     title="Full Screen"           src="skins/dark/full.png"            />
+      </div>
+      <canvas id="draw-canvas" style="background-image: url(skins/backgrounds/grey_gradient.jpg)"/>
+     </div>
+     </body>
+     
+     <script type="text/javascript">
+     var presenter = null;
+     
+     function setup3dhop() { 
+         presenter = new Presenter("draw-canvas");
+     
+         presenter.setScene({
+             meshes: {
+                 "mesh_1" : { url: "models/Leechkirche_Mosaik.nxz" }
+             },
+             modelInstances : {
+                 "model_1" : { mesh : "mesh_1" }
+             },
+             trackball: { 
+                 type : TurnTableTrackball,
+                 trackOptions : {
+                     startPhi: 0.0,
+                     startTheta: 0.0,
+                     startDistance: 2.0,
+                     minMaxPhi: [-180, 180],
+                     minMaxTheta: [-80.0, 80.0],
+                     minMaxDist: [0.2, 4.0]
+                 }
+             }
+         });
+     }
+     
+     function actionsToolbar(action) {
+         if(action=='home') presenter.resetTrackball(); 
+         else if(action=='zoomin') presenter.zoomIn();
+         else if(action=='zoomout') presenter.zoomOut(); 
+         else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); } 
+         else if(action=='screenshot') presenter.saveScreenshot();
+         else if(action=='full'  || action=='full_on') fullscreenSwitch(); 
+     }
+     
+     $(document).ready(function(){
+         init3dhop();
+     
+         setup3dhop();
+     });
+     </script>
+
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #ededda;">
+        <div class="text-center p-3" style="background-color: #a8a38f; color: #fff;">
+          © 2024
+        </div>
+    </footer>
+
+</body>
+</html>
