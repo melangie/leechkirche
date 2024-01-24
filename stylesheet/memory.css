@@ -1,0 +1,43 @@
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    gap: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.card {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: #4caf50;
+    cursor: pointer;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card .card-back,
+.card .card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card .card-front {
+    /* The front of the card is initially hidden (flipped away) */
+    transform: rotateY(180deg);
+}
+
+.card.flipped {
+    /* When the card is flipped, rotate it to show the front */
+    transform: rotateY(180deg);
+}
+
+.card.flipped .card-back {
+    /* Hide the back of the card when flipped */
+    display: none;
+}
