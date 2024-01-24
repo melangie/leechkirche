@@ -73,7 +73,7 @@
        <img id="full_on"  title="Exit Full Screen"      src="skins/dark/full_on.png"         style="position:absolute; visibility:hidden;"/>
        <img id="full"     title="Full Screen"           src="skins/dark/full.png"            />
       </div>
-      <canvas id="draw-canvas"/>
+      <canvas id="draw-canvas" style="background-image: url(skins/backgrounds/light.jpg)"/>
      </div>
      </body>
      
@@ -85,7 +85,7 @@
      
          presenter.setScene({
              meshes: {
-                 "mesh_1" : { url: "models/Leechkirche.nxz" }
+                 "mesh_1" : { url: "models/gargo.ply" }
              },
              modelInstances : {
                  "model_1" : { mesh : "mesh_1" }
