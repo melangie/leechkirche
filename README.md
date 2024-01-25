@@ -19,7 +19,6 @@ Dieses Projekt widmet sich der digitalen Darstellung und Erforschung der histori
 ## Technologie
 - **3DHOP**: Für interaktive 3D-Modelle
 - **HTML/CSS/JS**: Für Webentwicklung
-- **Responsive Design**: Gewährleistet Zugänglichkeit auf allen Geräten
 
 ## Lizenz
 Dieses Projekt ist unter der MIT-Lizenz lizenziert.
