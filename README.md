@@ -6,7 +6,6 @@ Dieses Projekt widmet sich der digitalen Darstellung und Erforschung der histori
 ## Zielsetzung
 - Bereitstellung einer umfassenden Informationsquelle über die Leechkirche
 - Präsentation interaktiver 3D-Modelle zur Förderung des kulturellen Erbes
-- Einbindung der Gemeinschaft durch Bildungs- und Forschungsressourcen
 
 ## Features
 - **Geschichtliche Aufarbeitung**: Detaillierte historische Kontextualisierung der Leechkirche.
