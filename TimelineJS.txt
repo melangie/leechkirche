@@ -1,7 +1,7 @@
 Timeline JS 
 
 Link Knightlab: https://timeline.knightlab.com/ 
-Link Timeline-Sheet: https://docs.google.com/spreadsheets/d/1ujKT1ETynscBfcYb53Y8uHzS_E3ggDTh1vOW4u1QALw/edit?pli=1#gid=0 
+Link Timeline-Sheet: https://docs.google.com/spreadsheets/d/1ujKT1ETynscBfcYb53Y8uHzS_E3ggDTh1vOW4u1QALw/edit?pli=1#gid=0 (Link öffentlich!)
 
 Knight Lab ist eine Initiative der Northwestern University, die innovative digitale Werkzeuge für Journalisten und Erzähler entwickelt. 
 JS Timeline, eines ihrer Projekte, ist eine leicht zu verwendende Bibliothek zur Erstellung interaktiver Zeitleisten, die es ermöglicht, Geschichten chronologisch mit Multimedia-Inhalten ansprechend darzustellen.
