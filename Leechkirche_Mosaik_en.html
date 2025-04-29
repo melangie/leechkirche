@@ -69,8 +69,14 @@
                   3D-Models
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="viewer_aussenbereich.html">Outside Area</a></li>
-                  <li><a class="dropdown-item" href="viewer_innenbereich.html">Interior Area</a></li>
+                  <li><a class="dropdown-item" href="Leechkirche_altar_en.html">Altar</a></li>
+                  <li><a class="dropdown-item" href="Leechkirche_Mosaik_en.html">Mosaic</a></li>
+                  <li><a class="dropdown-item" href="monument_en.html">Monument</a></li>
+                  <li><a class="dropdown-item" href="ritter_leech_en.html">Knight</a></li>
+                  <li><a class="dropdown-item" href="Wasserbecken_1_en.html">Holy Water Font 1</a></li>
+                  <li><a class="dropdown-item" href="Wasserbecken_2_en.html">Holy Water Font 2</a></li>
+                  <div class="dropdown-divider"></div>
+                  <li><a class="dropdown-item" href="viewer_aussenbereich_en.html">Outside Area</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -79,31 +85,70 @@
             </ul>
           </div>
           <div class="d-flex ms-auto align-items-center" style="gap: 4px;">
-            <a href="architektur.html" class="nav-link p-0" style="font-size: 15px; color: black;">DE</a>
+            <a href="Leechkirche_Mosaik.html" class="nav-link p-0" style="font-size: 15px; color: black;">DE</a>
             <span style="font-size: 15px;">|</span>
-            <a href="architektur_en.html" class="nav-link p-0" style="font-size: 15px; color: black;">EN</a>
+            <a href="Leechkirche_Mosaik_en.html" class="nav-link p-0" style="font-size: 15px; color: black;">EN</a>
         </div>
         </div>
       </nav>
 
-    <div class="content">
-        <div class="container">
-            <div id="content" class="row">
-              <header>
-                <h1>The architecture of the Leechkirche in Graz</h1>
-            </header>
-        
-            <div style="text-align:justify;">
-                <p>The Leechkirche is considered the most important early Gothic sacred building in the city of Graz. The western porch with two side towers also dates from the early Gothic period. The gallery above the narrow vestibule, which originally opened up to the church interior in three pointed arches, is now walled up, but has been clearly visible again since the restoration. It served as a model for Styrian architectural development, as can be seen in the pilgrimage churches of Mariazell and Pöllauberg and the parish church in Ptuj.</p>
-                <p>The single-nave, cross-ribbed vaulted hall church with a chancel end on five sides of an octagon follows the architectural model of French hut gothic in its strong emphasis on chapel-like, light-filled rooms. A dematerialisation in the form of openings and the dissolution of the rigid wall masses in favour of as many and as wide windows as possible was realised here. Eleven windows used to illuminate the interior from three sides, although later remodelling on the north side reduced this effect of light.</p>
-                <p>The Sainte-Chapelle in Paris can be cited as an architectural model, while the cathedral in Reims served as a model for the capitals with plant motifs. Furthermore, certain similarities can be found in the design of the base of the service bundles to the Teutonic Order Church of St Elisabeth in Marburg.</p>
-                <p>Translated with DeepL.</p>
-                <h2>Video tour of the KHG Graz</h2>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/BJ-jdXkc-b4?si=fSoXMkNxw7qGBOnT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-        
-    </div>
-    </div>
+      <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
+      <div id="toolbar">
+       <img id="home"     title="Home"                  src="skins/dark/home.png"            /><br/>
+       <img id="zoomin"   title="Zoom In"               src="skins/dark/zoomin.png"          /><br/>
+       <img id="zoomout"  title="Zoom Out"              src="skins/dark/zoomout.png"         /><br/>
+       <img id="light_on" title="Disable Light Control" src="skins/dark/lightcontrol_on.png" style="position:absolute; visibility:hidden;"/>
+       <img id="light"    title="Enable Light Control"  src="skins/dark/lightcontrol.png"    /><br/>
+       <img id="screenshot"   title="Save Screenshot"       src="skins/dark/screenshot.png"      /><br/>
+       <img id="full_on"  title="Exit Full Screen"      src="skins/dark/full_on.png"         style="position:absolute; visibility:hidden;"/>
+       <img id="full"     title="Full Screen"           src="skins/dark/full.png"            />
+      </div>
+      <canvas id="draw-canvas" style="background-image: url(skins/backgrounds/grey_gradient.jpg)"/>
+     </div>
+     </body>
+     
+     <script type="text/javascript">
+     var presenter = null;
+     
+     function setup3dhop() { 
+         presenter = new Presenter("draw-canvas");
+     
+         presenter.setScene({
+             meshes: {
+                 "mesh_1" : { url: "models/Leechkirche_Mosaik.nxz" }
+             },
+             modelInstances : {
+                 "model_1" : { mesh : "mesh_1" }
+             },
+             trackball: { 
+                 type : TurnTableTrackball,
+                 trackOptions : {
+                     startPhi: 0.0,
+                     startTheta: 0.0,
+                     startDistance: 2.0,
+                     minMaxPhi: [-180, 180],
+                     minMaxTheta: [-80.0, 80.0],
+                     minMaxDist: [0.2, 4.0]
+                 }
+             }
+         });
+     }
+     
+     function actionsToolbar(action) {
+         if(action=='home') presenter.resetTrackball(); 
+         else if(action=='zoomin') presenter.zoomIn();
+         else if(action=='zoomout') presenter.zoomOut(); 
+         else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); } 
+         else if(action=='screenshot') presenter.saveScreenshot();
+         else if(action=='full'  || action=='full_on') fullscreenSwitch(); 
+     }
+     
+     $(document).ready(function(){
+         init3dhop();
+     
+         setup3dhop();
+     });
+     </script>
 
     <!-- Footer -->
     <footer class="text-center text-white" style="background-color: #ededda;">
